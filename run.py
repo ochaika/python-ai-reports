@@ -14,3 +14,5 @@ with open('outputs/report.txt', 'w', encoding='utf-8') as f:
 
 
 print('Звіт згенеровано → outputs/report.txt')
+
+print("Report generation finished successfully.")
