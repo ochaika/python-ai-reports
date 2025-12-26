@@ -1,101 +1,119 @@
-# python-ai-reports
+# Python AI Reports Generator
 
-## 📌 Опис проєкту
+## 📌 Overview
 
-**python-ai-reports** — це міні‑проєкт на Python, який показує повний робочий цикл:
+**Python AI Reports Generator** — це Python-інструмент для автоматичної генерації текстових звітів на основі CSV-даних з використанням AI.
 
-> CSV / Excel → обробка даних → AI → готовий текстовий звіт
-
-Проєкт можна використовувати як:
-
-* приклад для навчання
-* основу для автоматичних звітів (HR, Sales, Email)
-* елемент портфоліо
+Проєкт призначений для ситуацій, коли потрібно:
+- швидко проаналізувати табличні дані
+- згенерувати зрозумілий текстовий звіт
+- автоматизувати рутинну аналітичну роботу
 
 ---
 
-## 🧠 Що робить проєкт
+## 🧠 What This Tool Does
 
-1. Читає дані з CSV‑файлу
-2. Готує структурований текст
-3. Надсилає дані до AI (OpenAI API)
-4. Отримує згенерований текстовий звіт
-5. Зберігає результат у папці `outputs/`
+- завантажує дані з CSV-файлу
+- аналізує записи (наприклад, дані про людей / клієнтів / користувачів)
+- використовує AI (через API) для генерації текстових висновків
+- зберігає готовий звіт у файл
 
 ---
 
-## 📂 Структура проєкту
+## 📂 Project Structure
 
-```
 python-ai-reports/
-├── data/               # Вхідні дані (CSV)
-├── outputs/            # Згенеровані звіти
-├── src/                # Логіка обробки
-├── run.py              # Точка запуску
-├── people.csv          # Приклад даних
-├── requirements.txt    # Залежності
-├── .gitignore          # Ігноровані файли
-└── README.md           # Опис проєкту
-```
+├─ run.py # Entry point
+├─ requirements.txt # Dependencies
+├─ README.md
+├─ .gitignore
+├─ .env.example # Environment variables template
+├─ data/
+│ └─ people.csv # Example input data
+├─ outputs/
+│ └─ report.txt # Generated reports
+└─ src/
+├─ init.py
+├─ load_data.py
+├─ analyze.py
+├─ generate_text.py
+└─ prompts.py
+
 
 ---
 
-## ⚙️ Встановлення та запуск
+## ▶️ How to Run
 
-### 1️⃣ Клонування репозиторію
-
-```bash
-git clone https://github.com/ochaika/python-ai-reports.git
-cd python-ai-reports
-```
-
-### 2️⃣ Встановлення залежностей
-
+### 1️⃣ Install dependencies
 ```bash
 pip install -r requirements.txt
-```
 
-### 3️⃣ Налаштування змінних середовища
+Configure environment variables
+Create .env based on the example:
+copy .env.example .env
+Add your API key to .env.
 
-Створіть файл `.env` у корені проєкту:
-
-```text
-OPENAI_API_KEY=your_api_key_here
-```
-
-> ❗ Файл `.env` **не зберігається в GitHub** з міркувань безпеки.
-
----
-
-## ▶️ Запуск
-
-```bash
+Run the project
 python run.py
-```
+The generated report will appear in the outputs/ folder.
 
-Після запуску:
+Input Data
 
-* згенерований текст з’явиться у папці `outputs/`
+The input CSV file should contain structured data (for example, people or client records).
 
----
+Example:
 
-## 🛡️ Безпека
+name,age,city
+John,32,London
+Anna,27,Berlin
 
-* API‑ключі зберігаються тільки локально
-* `.env` доданий до `.gitignore`
-* Репозиторій без секретів
+Output
 
----
+The tool generates a human-readable AI-based report, for example:
 
-## 🚀 Можливі розширення
+summary of the dataset
 
-* Підтримка Excel (`.xlsx`)
-* Кілька типів звітів
-* Web‑інтерфейс
-* Автоматична відправка email
+insights and patterns
 
----
+short analytical conclusions
 
-## 👤 Автор
+Output files are saved to:
 
-Проєкт створений для навчання та практики роботи з Python, GitHub та AI API.
+outputs/report.txt
+
+Use Cases (For Clients)
+
+This solution is suitable for:
+
+business reports
+
+HR analytics
+
+marketing data summaries
+
+client or user profiling
+
+internal analytics automation
+
+🛠 Customization
+
+The project can be easily adapted to:
+
+different CSV formats
+
+custom prompts
+
+other types of reports
+
+integration into existing systems
+
+👤 Author
+
+Python freelance developer
+Specializing in:
+
+data processing
+
+automation
+
+AI-powered tools
